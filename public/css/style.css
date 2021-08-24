@@ -57,6 +57,7 @@ main .category h1 {
 .options {
   display: flex;
   gap: 16px;
+  margin-right: 50px;
   overflow-x: scroll;
 }
 
