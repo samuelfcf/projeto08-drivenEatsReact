@@ -1,0 +1,37 @@
+estrutura dos dados para cada categoria: 
+
+categoridas = [
+  {
+    categoryTitle: "",
+    categoryOptions: [
+      {
+        img: "",
+        name: "",
+        description: "",
+        price: ""
+      }
+    ]
+  },
+  {
+    categoryTitle: "",
+    categoryOptions: [
+      {
+        img: "",
+        name: "",
+        description: "",
+        price: ""
+      }
+    ]
+  },
+  {
+    categoryTitle: "",
+    categoryOptions: [
+      {
+        img: "",
+        name: "",
+        description: "",
+        price: ""
+      }
+    ]
+  }
+]
