@@ -1,4 +1,21 @@
+import { Button } from "../../shared/Button";
+
 const ConfirmOrderCard = () => {
+
+  const buttonsAttributes = [
+    {
+      disabled: false,
+      className: "confirm-order-button",
+      text: "Tudo certo, pode pedir!"
+    },
+    {
+      disabled: false,
+      className: "cancel",
+      text: "Cancelar"
+    }
+  ];
+
+
   return (
     <div className="confirm-order-card">
       <h2>Confirme seu pedido</h2>
@@ -21,8 +38,9 @@ const ConfirmOrderCard = () => {
           <p>qweqweqw</p>
         </div>
 
-        <button className="confirm-order-button" >Tudo certo, pode pedir!</button>
-        <button className="cancel" >Cancelar</button>
+        {buttonsAttributes.map((buttonAttribute) => (
+          <Button attributes={buttonAttribute} />
+        ))}
       </div>
     </div>
   );

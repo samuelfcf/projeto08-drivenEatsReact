@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer>
-      < Button attributes={buttonConfirmOrderAttributes} />
+      <Button attributes={buttonConfirmOrderAttributes} />
     </footer>
   );
 }
