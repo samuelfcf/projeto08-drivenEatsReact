@@ -1,5 +1,6 @@
 const Option = (props) => {
   const {
+    id,
     name,
     img,
     description,
@@ -7,7 +8,7 @@ const Option = (props) => {
   } = props
 
   return (
-    <li className="option food" onclick="selectOption(this, this.className)">
+    <li key={id} className="option food">
       <img src={img} className="image" alt="" />
       <h2>{name}</h2>
       <p>{description}</p>

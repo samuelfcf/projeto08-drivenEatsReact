@@ -93,8 +93,8 @@ const categories = [
 const Content = () => {
   return (
     <main className="content">
-      {categories.map((category) => (
-        <Category category={category} />
+      {categories.map((category, index) => (
+        <Category key={index} category={category} />
       ))}
     </main>
   )

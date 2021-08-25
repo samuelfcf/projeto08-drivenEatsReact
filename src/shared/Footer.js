@@ -1,7 +1,16 @@
+import { Button } from "./Button";
+
 const Footer = () => {
+
+  const buttonConfirmOrderAttributes = {
+    disabled: true,
+    className: "finalize-order-button",
+    text: "Selecione os 3 itens para fechar o pedido"
+  }
+
   return (
     <footer>
-      <button disabled="true" class="finalize-order-button">Selecione os 3 itens para fechar o pedido</button>
+      < Button attributes={buttonConfirmOrderAttributes} />
     </footer>
   );
 }

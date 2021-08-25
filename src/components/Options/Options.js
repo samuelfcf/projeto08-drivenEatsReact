@@ -6,8 +6,10 @@ const Options = (props) => {
 
   return (
     <ul className="options">
-      {options.map((option) => (
+      {options.map((option, index) => (
         <Option
+          key={index}
+          id={index}
           name={option.name}
           img={option.img}
           description={option.description}
