@@ -92,7 +92,7 @@ const categories = [
 
 const Content = () => {
   return (
-    <main>
+    <main className="content">
       {categories.map((category) => (
         <Category category={category} />
       ))}

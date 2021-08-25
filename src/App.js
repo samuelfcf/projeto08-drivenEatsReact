@@ -4,7 +4,7 @@ import { Content } from "./shared/Content";
 
 const App = () => {
 	return (
-		<div class="container">
+		<div className="container">
 			<Header />
 			<Content />
 			<Footer />

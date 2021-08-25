@@ -1,10 +1,13 @@
-import { Option } from "../Options/Option";
+import { Options } from "../Options/Options";
 
 const Category = (props) => {
+
+  const { categoryTitle, categoryOptions } = props.category
+
   return (
-    <div class="category">
-      <h1>{props.category.categoryTitle}</h1>
-      <Option options={props.category.categoryOptions} />
+    <div className="category">
+      <h1>{categoryTitle}</h1>
+      <Options categoryOptions={categoryOptions} />
     </div>
   )
 }
