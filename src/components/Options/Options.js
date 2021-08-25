@@ -10,8 +10,10 @@ const Options = (props) => {
         <Option
           key={index}
           id={index}
+          className={option.className}
           name={option.name}
           img={option.img}
+          alt={option.alt}
           description={option.description}
           price={option.price} />
       ))}

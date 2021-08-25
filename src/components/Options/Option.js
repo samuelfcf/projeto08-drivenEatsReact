@@ -1,15 +1,18 @@
 const Option = (props) => {
+
   const {
     id,
     name,
+    className,
     img,
+    alt,
     description,
     price
   } = props
 
   return (
-    <li key={id} className="option food">
-      <img src={img} className="image" alt="" />
+    <li key={id} className={className}>
+      <img src={img} className="image" alt={alt} />
       <h2>{name}</h2>
       <p>{description}</p>
       <div className="price-area">
