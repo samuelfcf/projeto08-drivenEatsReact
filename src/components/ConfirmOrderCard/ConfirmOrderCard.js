@@ -15,7 +15,6 @@ const ConfirmOrderCard = () => {
     }
   ];
 
-
   return (
     <div className="confirm-order-card">
       <h2>Confirme seu pedido</h2>
