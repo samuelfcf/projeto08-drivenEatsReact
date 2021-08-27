@@ -10,7 +10,7 @@ const Option = (props) => {
     img,
     alt,
     description,
-    price
+    price,
   } = props;
 
   const [minusButtonAttributes, plusButtonAttribute] = props.buttonsAttributes;
