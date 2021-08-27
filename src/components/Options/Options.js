@@ -4,6 +4,19 @@ const Options = (props) => {
 
   const options = props.categoryOptions;
 
+  const buttonsAttributes = [
+    {
+      disabled: false,
+      className: "minus",
+      text: "-"
+    },
+    {
+      disabled: false,
+      className: "plus",
+      text: "+"
+    }
+  ]
+
   return (
     <ul className="options">
       {options.map((option, index) => (
@@ -15,7 +28,8 @@ const Options = (props) => {
           img={option.img}
           alt={option.alt}
           description={option.description}
-          price={option.price} />
+          price={option.price}
+          buttonsAttributes={buttonsAttributes} />
       ))}
     </ul>
   )

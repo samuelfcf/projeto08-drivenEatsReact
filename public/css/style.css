@@ -119,6 +119,25 @@ main .category h1 {
   align-items: center;
 }
 
+.option .price-area div button.minus, button.plus {
+  border: 0;
+  background-color: #ffffff;
+  font-size: 16px; 
+  font-weight: 700;
+}
+
+.option .price-area div button.minus {
+  color: #CF2B2B
+}
+
+.option .price-area div button.plus {
+  color: #32B72F;
+}
+
+.hidden {
+  display: none;
+}
+
 footer {
   height: 92px;
   width: 100%;

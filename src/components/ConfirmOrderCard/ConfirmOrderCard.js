@@ -37,8 +37,8 @@ const ConfirmOrderCard = () => {
           <p>qweqweqw</p>
         </div>
 
-        {buttonsAttributes.map((buttonAttribute) => (
-          <Button attributes={buttonAttribute} />
+        {buttonsAttributes.map((buttonAttribute, index) => (
+          <Button key={index} attributes={buttonAttribute} />
         ))}
       </div>
     </div>
