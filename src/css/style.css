@@ -117,6 +117,7 @@ main .category h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 22px;
 }
 
 .option .price-area div button.minus, button.plus {

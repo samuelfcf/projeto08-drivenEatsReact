@@ -4,62 +4,65 @@ import { Button } from "../../shared/Button"
 const Option = (props) => {
 
   const {
-    id,
     name,
     className,
     img,
     alt,
     description,
     price,
-  } = props;
-
-  const [minusButtonAttributes, plusButtonAttribute] = props.buttonsAttributes;
+  } = props.optionInfo;
 
   const [selected, setSelected] = useState(className);
-  const [quantity, setQuantity] = useState(1);
-  const [isHiden, setIsHidden] = useState("hidden")
+  const [isHidden, setIsHidden] = useState("hidden");
+  const [qty, setQty] = useState(1);
 
-  const incrementItem = (event) => {
+  const incrementThisItem = (event, className) => {
     event.stopPropagation();
-    setQuantity(quantity + 1);
-    setSelected(`${className} selected`);
+    setQty(qty + 1);
+    props.incrementOpionsQuantity(className);
   }
 
-  const decrementItem = (event) => {
+  const decrementThisItem = (event, className) => {
     event.stopPropagation();
+    props.decrementOptionsQuantity(1, className);
 
-    if (quantity <= 1) {
+    if (qty <= 1) {
       setSelected(className)
       setIsHidden("hidden")
-      return;
+      setQty(1);
     }
-
-    setQuantity(quantity - 1)
+    setQty(qty - 1);
   }
 
-  const selectItem = () => {
+  const selectThisItem = (event, classs) => {
+    event.stopPropagation();
 
     if (selected === className) {
       setSelected(`${className} selected`);
       setIsHidden("");
+      props.incrementOpionsQuantity(classs);
     } else {
       setSelected(className);
-      setQuantity(0)
       setIsHidden("hidden");
+      setQty(1);
+      props.decrementOptionsQuantity(qty, classs);
     }
   }
 
+  const [minusButtonAttributes, plusButtonAttribute] = props.buttonsAttributes;
+
   return (
-    <li key={id} className={selected} onClick={selectItem}>
+    <li className={selected} onClick={(event) => selectThisItem(event, className)}>
       <img src={img} className="image" alt={alt} />
       <h2>{name}</h2>
       <p>{description}</p>
+      <p>{props.totalOptionItems}</p>
       <div className="price-area">
         <strong>R$ {price}</strong>
-        <div className={isHiden}>
-          <Button key={0} attributes={minusButtonAttributes} onClick={(event) => decrementItem(event)} />
-          <strong>{quantity}</strong>
-          <Button key={1} attributes={plusButtonAttribute} onClick={(event) => incrementItem(event)} />
+        <div className={isHidden}>
+          <Button key={0} attributes={minusButtonAttributes} onClick={(event) => decrementThisItem(event, className)} />
+          <strong>{qty}</strong>
+          <Button key={1} attributes={plusButtonAttribute} onClick={(event) => incrementThisItem(event, className)} />
         </div>
       </div>
     </li>

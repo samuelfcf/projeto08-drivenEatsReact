@@ -1,13 +1,13 @@
 const Button = (props) => {
 
   const {
-    disabled,
+    funcButao,
     className,
     text
   } = props.attributes
 
   return (
-    <button disabled={disabled} className={className} onClick={props.onClick}>{text}</button>
+    <button disabled={funcButao} className={className} onClick={props.onClick}>{text}</button>
   )
 }
 
