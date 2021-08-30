@@ -1,10 +1,8 @@
-import { Options } from "../Options/Options";
+import { Options } from "../components/Options/Options"
 
-const Category = (props) => {
+const Category = ({ category, itemsSelected, setItemsSelected }) => {
 
-  const { categoryTitle, categoryOptions } = props.category;
-  const itemsSelected = props.itemsSelected;
-  const setItemsSelected = props.setItemsSelected;
+  const { categoryTitle, categoryOptions } = category;
 
   return (
     <div className="category">

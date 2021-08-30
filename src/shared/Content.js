@@ -1,6 +1,5 @@
 import React from "react";
-
-import { Category } from "../components/Categories/Category";
+import { Category } from "../shared/Category";
 
 const categories = [
   {
@@ -119,10 +118,9 @@ const categories = [
 const Content = ({ itemsSelected, setItemsSelected, }) => {
   return (
     <main className="content">
-      <ul>
-      </ul>
       {categories.map((category, index) => (
-        <Category key={index}
+        <Category
+          key={index}
           category={category}
           itemsSelected={itemsSelected}
           setItemsSelected={setItemsSelected} />

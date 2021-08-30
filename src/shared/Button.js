@@ -1,12 +1,12 @@
 const Button = (props) => {
   const {
-    funcButao,
+    disableButton,
     className,
     text
   } = props.attributes
 
   return (
-    <button button disabled={funcButao} className={className} onClick={props.onClick} >{text}</button>
+    <button button disabled={disableButton} className={className} onClick={props.onClick} >{text}</button>
   )
 }
 

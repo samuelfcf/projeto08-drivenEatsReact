@@ -25,17 +25,17 @@ const Option = ({ buttonsAttributes, optionInfo, id, incrementOptionsQuantity, d
     return priceNumber;
   }
 
-  const incrementThisItem = (event, className, name, price, qty, isIncreasing, id) => {
+  const incrementThisItem = (event, className, name, price, qty, isIncreased, id) => {
     event.stopPropagation();
     const priceNumber = convertPriceStringToNumber(price);
 
     setQty(qty + 1);
-    incrementOptionsQuantity(className, name, priceNumber, qty, isIncreasing, id);
+    incrementOptionsQuantity(className, name, priceNumber, qty, isIncreased, id);
   }
 
   const decrementThisItem = (event, itemClassName) => {
     event.stopPropagation();
-    decrementOptionsQuantity(1, itemClassName);
+    decrementOptionsQuantity(itemClassName, 1, true, id);
 
     if (qty <= 1) {
       setSelected(itemClassName)
@@ -45,19 +45,19 @@ const Option = ({ buttonsAttributes, optionInfo, id, incrementOptionsQuantity, d
     setQty(qty - 1);
   }
 
-  const selectThisItem = (event, itemClassName, name, price, qty, isIncreasing, id) => {
+  const selectThisItem = (event, itemClassName, name, price, qty, isIncreased, id) => {
     event.stopPropagation();
     const priceNumber = convertPriceStringToNumber(price)
 
     if (selected === className) {
       setSelected(`${className} selected`);
       setIsHidden("");
-      incrementOptionsQuantity(itemClassName, name, priceNumber, qty, isIncreasing, id);
+      incrementOptionsQuantity(itemClassName, name, priceNumber, qty, isIncreased, id);
     } else {
       setSelected(className);
       setIsHidden("hidden");
       setQty(1);
-      decrementOptionsQuantity(qty, itemClassName);
+      decrementOptionsQuantity(itemClassName, qty, false, id);
     }
   }
 
