@@ -7,11 +7,10 @@ import { ConfirmOrderCard } from "./components/ConfirmOrderCard/ConfirmOrderCard
 const App = () => {
 
 	const [itemsSelected, setItemsSelected] = useState({
-		food: [],
-		drink: [],
-		dessert: []
+		foods: [],
+		drinks: [],
+		desserts: [],
 	});
-
 
 	return (
 		<>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Category } from "../components/Categories/Category";
 
@@ -120,9 +120,6 @@ const Content = ({ itemsSelected, setItemsSelected, }) => {
   return (
     <main className="content">
       <ul>
-        <li>{itemsSelected.food}</li>
-        <li>{itemsSelected.drink}</li>
-        <li>{itemsSelected.dessert}</li>
       </ul>
       {categories.map((category, index) => (
         <Category key={index}
